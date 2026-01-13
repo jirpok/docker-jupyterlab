@@ -1,8 +1,8 @@
-A simple configuration to run JupyterLab with Docker Compose, with support for other programming languages besides Python: C, Kotlin, Bash, Zsh, and JavaScript.
+A simple Docker Compose configuration for running JupyterLab with support for other programming languages besides Python: C, Kotlin, Bash, Zsh, and JavaScript.
 
 ### Setup
 
-1. Update `existing-docker-network`, `/path/to/jupyter/notebooks` (your notebooks), and `/path/to/jupyter/configuration` (JupyterLab settings) in `docker-compose.yml` accordingly.
+1. Update `existing-docker-network`, `/path/to/jupyter/notebooks` (your notebooks), and `/path/to/jupyter/configuration` (JupyterLab web UI settings) in `docker-compose.yml` accordingly. You can leave both directories initially empty.
 2. Run `docker compose up -d --build`.
 
 ### Notes
