@@ -1,0 +1,20 @@
+name: jupyter
+
+services:
+    jupyter:
+        build: .
+        container_name: jupyter
+        restart: unless-stopped
+        networks:
+            - existing-docker-network
+        environment:
+            - JUPYTER_ENABLE_LAB=yes
+        volumes:
+            - /path/to/jupyter/notebooks:/home/jovyan/work
+            - /path/to/jupyter/configuration:/home/jovyan/.jupyter
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
+
+networks:
+    existing-docker-network:
+        external: true
