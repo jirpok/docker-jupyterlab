@@ -8,5 +8,5 @@ A simple Docker Compose configuration for running JupyterLab with support for ot
 ### Notes
 
 - For rootless Docker, change ownership of the configuration directory on the host to `100999:100099` (it's _not_ a typo).
-- To install additional Python packages, add them to the `# install Python packages` section in the Dockerfile, then rebuild.
+- Install additional Python packages by adding them to the `# install Python packages` section of the Dockerfile, then rebuild.
 - The default port is `8888`.
