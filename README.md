@@ -1,12 +1,22 @@
-A simple Docker Compose configuration for running JupyterLab with support for other programming languages besides Python: C, Kotlin, Bash, Zsh, and JavaScript.
+# Run JupyterLab with Docker Compose and provide support for other languages: C, Kotlin, Bash, and JavaScript
 
-### Setup
+## Setup
 
-1. Update `existing-docker-network`, `/path/to/jupyter/notebooks` (your notebooks), and `/path/to/jupyter/configuration` (JupyterLab web UI settings) in `docker-compose.yml` accordingly. You can leave both directories initially empty.
+1. Edit `docker-compose.yml` and replace:
+   - `existing-docker-network`
+   - `/path/to/jupyter/notebooks`: A directory with your `.ipynb` notebooks, typically a Git repo. Its root will show up in the sidebar.[^1]
+   - `/path/to/jupyter/configuration`: Settings and cache. For rootless Docker, change this directory's ownership on the host to `100999:100099` (it's _not_ a typo).[^1]
+
 2. Run `docker compose up -d --build`.
 
-### Notes
+3. The default port is `8888`.
 
-- For rootless Docker, change ownership of the configuration directory on the host to `100999:100099` (it's _not_ a typo).
-- Install additional Python packages by adding them to the `# install Python packages` section of the Dockerfile, then rebuild.
-- The default port is `8888`.
+4. Install additional Python packages by adding them to the `# install Python packages` section of the Dockerfile, then rebuilding.
+
+## Use password, hide token
+
+1. Run `docker logs jupyter` and copy the token.
+2. Fill in the form, including your new password.
+3. Follow the instructions in `/path/to/jupyter/configuration/jupyter_server_config.py:c.ServerApp.password`; ignore DEPRECATED warnings.
+
+[^1]: The directory can be initially empty.
