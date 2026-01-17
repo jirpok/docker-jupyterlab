@@ -1,4 +1,10 @@
-# Run JupyterLab with Docker Compose, with integrated support for other languages: C, Kotlin, Bash, and JavaScript
+## What is this?
+
+Run [JupyterLab](https://jupyterlab.readthedocs.io/en/latest/) with Docker Compose, with integrated support for other languages: C, Kotlin, Bash, and JavaScript.
+
+## Who is it for?
+
+Anyone trying to understand how to install alternative kernels in order ot get support for programming languages other than Python in JupyterLab.
 
 ## Setup
 
