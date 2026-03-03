@@ -9,7 +9,7 @@ Custom Docker Compose setup for [JupyterLab](https://jupyterlab.readthedocs.io/e
 2. Run `docker compose up -d --build`
 3. The default port is `8888`
 
-To make password persistent across server sessions:
+To make your password persistent across server sessions:
 
 1. Run `docker logs jupyter` and copy the token
 2. Fill out the form and set your new password
@@ -17,4 +17,4 @@ To make password persistent across server sessions:
 
 To install additional Python packages, add them to the `# install Python packages` section of the `Dockerfile`, then rebuild the image
 
-[^1]: Both directories can be initially empty
+[^1]: Both directories can initially be empty
